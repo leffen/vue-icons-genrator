@@ -4,3 +4,6 @@
 
 * Required libs
 **  https://pillow.readthedocs.io/en/stable/installation.html
+
+* Run
+** python3 vueicongen.py -i images/leffenweb.png -o icons
