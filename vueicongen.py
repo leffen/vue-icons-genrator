@@ -4,7 +4,7 @@ from PIL import Image
 import sys, getopt,pathlib,os.path
 
 
-def genIcons(srcImage,destDir):
+def gen_icons(srcImage,destDir):
 
   path = pathlib.Path(destDir)
   path.mkdir(parents=True, exist_ok=True)
@@ -24,6 +24,11 @@ def genIcons(srcImage,destDir):
   newsize = (60,60)
   img_resize = img.resize(newsize)
   img_resize.save(f'{destDir}/apple-touch-icon.png')
+
+  img_converted = '%s/favicon.ico' % destDir
+  img_resize = img.resize((48, 48))
+  img_resize.save(img_converted)
+
 
 def main(argv):
    inputfile = ''
@@ -48,7 +53,9 @@ def main(argv):
      print(f'Inputfile {inputfile} do not exist')
      os.sys.exit(-1)
 
-   genIcons(inputfile,outputdir)
+   gen_icons(inputfile,outputdir)
+
+
 
 if __name__ == "__main__":
    main(sys.argv[1:])
