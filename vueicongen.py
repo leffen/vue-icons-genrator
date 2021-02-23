@@ -17,7 +17,9 @@ def gen_icons(srcImage,destDir):
   for i in range(0,13):
     newsize = (dimensions[i],dimensions[i])
     img_resize = img.resize(newsize)
-    img_resize.save(f'{destDir}/{names[i]}{dimensions[i]}x{dimensions[i]}.png')
+    file_name = f'{destDir}/{names[i]}{dimensions[i]}x{dimensions[i]}.png'
+    img_resize.save(file_name)
+    print(f'Saved {file_name}')
 
 
   img = Image.open(srcImage)
